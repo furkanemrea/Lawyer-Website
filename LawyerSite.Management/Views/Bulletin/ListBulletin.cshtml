@@ -1,0 +1,48 @@
+﻿@model List<Bulletins>
+@{
+    ViewData["Title"] = "ListBulletin";
+}
+<div class="card">
+    <div class="card-header">
+        <div class="card-title">
+            <h4>Bülten Listesi</h4>
+        </div>
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Başlık</th>
+                    <th>Alt Başlık</th>
+                    <th>İçerik</th>
+                    <th>Tarih</th>
+                    <th>Detay</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model?.Count > 0)
+                {
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Title</td>
+                            <td>@item.SubTitle</td>
+                            <td>@item.Contents</td>
+                            <td>@item.DisplayDateTime</td>
+                            <td>
+                                <a href="#" class="btn btn-sm btn-outline-success cursor-pointer">Detay</a>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="3">Kayıt Bulunamadı</td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>

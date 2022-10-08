@@ -1,0 +1,100 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+<div class="rs-contact inner gray-bg pt-120 md-pt-80">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 order-last md-mb-30">
+                <div class="contact-sidebar">
+                    <div class="image-part">
+                        <img src="images/contact/sidebar.jpg" alt="">
+                    </div>
+                    <div class="content-part">
+                        <h3 class="title">İletişim Bilgileri</h3>
+                        <div class="address-item ml--5 mb-20">
+                            <div class="address-icon">
+                                <i class="icon-basic-smartphone"></i>
+                            </div>
+                            <div class="address-text">
+                                <h5 class="contact-title">Telefon Numaraları</h5>
+                                <a href="tel:+90 850 430 4482">+90 850 430 4482</a><br/>
+                                <a href="tel:+90 850 430 4482">+90 850 430 4482</a>
+                            </div>
+                        </div>
+                        <div class="address-item ml--5 mb-20">
+                            <div class="address-icon">
+                                <i class="icon-basic-mail-multiple"></i>
+                            </div>
+                            <div class="address-text">
+                                <h5 class="contact-title">Mail Adresi</h5>
+                                <a href="mailto:cduhukuk@gmail.com">cduhukuk@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="address-item ml--5">
+                            <div class="address-icon">
+                                <i class="icon-basic-geolocalize-01"></i>
+                            </div>
+                            <div class="address-text">
+                                <h3 class="contact-title">Adres</h3>
+                                Fulya Mahallesi,Ortaklar Caddesi No 45/3<br> Şişli, İstanbul
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8 pr-30">
+                <div class="contact-wrap">
+                    <div class="sec-title mb-50">
+                        <h2 class="title mb-33">Bizimle İletişime Geç</h2>
+                        <div class="desc">We denounce with righteous indignation and dislike men who are so beguiled perfectly simple. <br> and demoralized by the charms of pleasure of the moment, so blinded by desire.</div>
+                    </div>
+                    <div id="form-messages"></div>
+                    <form id="contact-form" class="contact-inner-page" method="post" action="mailer.php">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-field">
+                                    <input type="text" placeholder="Your Name" id="name" name="name" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-field">
+                                    <input type="email" placeholder="Your Email" id="email" name="email" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-field">
+                                    <input type="text" placeholder="Phone" id="phone_number" name="phone_number" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-field">
+                                    <input type="text" name="website" placeholder="Your Website">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-field">
+                                    <textarea placeholder="Your Message" id="message" name="message" required></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-btn submit-btn mt-30">
+                            <button class="readon upper" type="submit">Submit request</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="g-map mt-120 md-mt-80">
+        <iframe src="https://maps.google.com/maps?q=37.803467%2C%20-122.472369&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+    </div>
+</div>
+
+@section Scripts{
+    <script>
+        $(document).ready(() => {
+            $(".toolbar-area").remove();
+            $(".contact-page").addClass("current-menu-item");
+        })
+    </script>
+}

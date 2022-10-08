@@ -1,0 +1,88 @@
+﻿
+@{
+    ViewData["Title"] = "CreateBulletin";
+}
+
+
+<script src="https://cdn.tiny.cloud/1/qf8ep2neeuxaorpixr6fau37fw7xpa6xauxzt6cpp9tmwem3/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
+
+
+
+<div class="card">
+    <div class="card-header">
+        <div class="card-title">
+            <h4> Yeni Bülten Oluştur</h4>
+        </div>
+    </div>
+    <div class="card-body">
+        <br />
+        <div class="row">
+            <div class="col-12">
+                <label>Başlık</label>
+                <input type="text" class="form-control" placeholder="Başlık Girin" id="bulletin-title" />
+            </div>
+        </div><br />
+        <div class="row">
+            <div class="col-12">
+                <label>Alt Başlık</label>
+                <input type="text" class="form-control" placeholder="Başlık Girin" id="bulletin-sub-title" />
+
+            </div>
+        </div><br />
+
+        <div class="row">
+            <div class="col-12">
+                <label>İçerik Girin</label>
+                <textarea id="bulletin-content"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <label>Tarih Girin</label>
+                <input type="date" class="form-control" id="bulletin-display-date" />
+            </div>
+        </div><br />
+        <div class="row">
+            <div class="col-12">
+                <div class="float-right mt-1">
+                    <button class=" btn btn-primary" onclick="CreateBulletin()">Oluştur</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    tinymce.init({
+        selector: 'textarea#bulletin-content',
+        height: 500,
+        menubar: false,
+        plugins: [
+            'advlist autolink lists link image charmap print preview anchor',
+            'searchreplace visualblocks code fullscreen',
+            'insertdatetime media table paste code help wordcount'
+        ],
+        toolbar: 'undo redo | formatselect | ' +
+            'bold italic backcolor | alignleft aligncenter ' +
+            'alignright alignjustify | bullist numlist outdent indent | ' +
+            'removeformat | help',
+        content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+    });
+
+    function CreateBulletin() {
+        
+        var parameters = {
+            url: "/Bulletin/CreateNewBulletin",
+            data: {
+                displayDateTime: $("#bulletin-display-date").val(),
+                title: $("#bulletin-title").val(),
+                subTitle: $("#bulletin-sub-title").val(),
+                contents: tinymce.get("bulletin-content").getContent(),
+            }
+        };
+        var result = serviceWorker.Actions.Post(parameters);
+        console.log(result);
+    }
+</script>

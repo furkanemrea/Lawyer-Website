@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<div class="card">
+    <div class="card-header">
+        <div class="card-title">
+            <h4> Yeni Blog Oluştur</h4>
+        </div>
+    </div>
+    <div class="card-body"><br />
+        <div class="row">
+            <div class="col-12">
+                <label>Başlık</label>
+                <input type="text" class="form-control" placeholder="Başlık Girin" id="blog-title" />
+            </div>
+        </div><br />
+        <div class="row">
+            <div class="col-12">
+                <label>Açıklama</label>
+                <textarea rows="8" class="form-control" placeholder="Açıklama Girin" id="blog-description"></textarea>
+            </div>
+        </div><br />
+        <div class="row">
+            <div class="col-12">
+                <label>Tarih Girin</label>
+                <input type="date" class="form-control" id="blog-date" />
+            </div>
+        </div><br />
+        <div class="row">
+            <div class="col-12">
+                <div class="float-right mt-1">
+                    <button class=" btn btn-primary" onclick="CreateBlog()">Oluştur</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    function CreateBlog() {
+        var displayedDate = $("#blog-date").val();
+        var description = $("#blog-description").val();
+        var title = $("#blog-title").val();
+        var data = {
+            displayedDate,
+            description,
+            title
+        };
+        var parameters = {
+            url: "/Blog/CreateBlog",
+            data
+        };
+        var result = serviceWorker.Actions.Post(parameters);
+        if (result.status == 1) {
+            swal("Yeni Blog Başarıyla Oluşturuldu  !", " Detay Sayfası üzerinden içeriğini düzenleyebilirsiniz.!", "success");
+        }
+        else {
+            swal("Bir Hata Oluştu");
+        }
+    }
+</script>

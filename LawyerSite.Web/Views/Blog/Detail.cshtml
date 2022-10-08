@@ -1,0 +1,112 @@
+﻿@model BlogDetailPageViewModel
+@{
+    ViewData["Title"] = "Detail";
+}
+<div class="rs-blog single gray-bg pt-120 pb-120 md-pt-80 md-pb-80">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="white-bg mb-60">
+                    @*<img src="images/blog/inner/1.jpg" alt="">*@
+                    <div class="content-wrap">
+
+                        @foreach (var content in Model.BlogContents)
+                        {
+                            <h3 class="fs-30">@content.Title</h3>
+                            @Html.Raw(content.Description)
+                        }
+
+                        @*<h2 class="mb-22">Some great pleasure ducimus</h2>
+                        <p class="desc mb-0">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using ‘Content here, content here’, making it look like readable English.</p>
+
+                        <blockquote>Sometimes by accident, sometimes on purpose with the release of letraset sheets containing lorem ipsum passages, and more recently with desktop publishing software like aldus page maker including versions of lorem ipsum. Sometimes by accident, sometimes on purpose.</blockquote>
+
+                        <p class="desc">Aenean nulla ipsum, facilisis eu porta non, rutrum sit amet nibh. Quisque id diam feugiat, pharetra arcu eget, bibendum tortor. Vivamus aliquam lacus id leo tristique sagittis. Pellentesque mattis diam metus, id commodo ex placerat vitae. Curabitur lobortis justo ante, in varius leo congue id.</p>
+
+                        <h3 class="fs-30">Nemo enim ipsam voluptatem quia</h3>
+                        <p class="desc">Accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus</p>
+
+                        <ul class="list-disc">
+                            <li>Advokat of using Lorem</li>
+                            <li>Elementum erat mattis quis</li>
+                            <li>In vitae vulputate</li>
+                        </ul>
+
+                        <h4>Nor again is there anyone who loves</h4>
+                        <p class="desc">Dicat harum posidonium cum cu. Ut quo atomorum petentium suscipiantur. Cu vel integre democritum suscipiantur. Nobis percipit pertinacia nam in. In alienum luptatum aliquando sit, fugit mentitum gubergren nam at, ad his illum nulla contentiones. Odio modo tritani te pro, vim ea eros animal. Ei lucilius expetendis cotidieque qui, duo at augue dictas suscipiantur.</p>*@
+                        <div class="tags-part">
+                            <div class="tagcloud">
+                                <span>Etiketler :</span>
+                                <a href="#">Kamu Davaları</a>
+                                <a href="#">Dava</a>
+                                <a href="#">Avukat</a>
+                                <a href="#">İş Hukuku</a>
+                                <a href="#">Aile Konutu</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="single-bottom">
+              @*      <div class="ps-navigation">
+                        <ul>
+                            <li class="prev">
+                                <a href="#/">
+                                    <span class="next_link">Previous</span>
+                                    <span class="link_text">
+                                        <i class="fa fa-chevron-left"></i>
+                                        International Blog Law
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="next">
+                                <a href="https://rstheme.com/products/wordpress/advokat/traffic-tikets-provides-law/">
+                                    <span class="next_link">Next</span>
+                                    <span class="link_text">
+                                        Traffic Tikets provides Law
+                                        <i class="fa fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>*@
+@*
+                    <div class="comment-post">
+                        <h3 class="fs-30">Leave a Reply</h3>
+                        <p>Your email address will not be published. Required fields are marked *</p>
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6 mb-28">
+                                    <div class="cmnt-form">
+                                        <label>Name *</label>
+                                        <input type="text" name="text" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-28">
+                                    <div class="cmnt-form">
+                                        <label>Email *</label>
+                                        <input type="email" name="email" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="cmnt-form">
+                                        <label>Comment</label>
+                                        <textarea></textarea>
+                                        <button class="readon upper" type="submit">Post Comment</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script>
+        $(document).ready(() => {
+            $(".toolbar-area").remove();
+        })
+    </script>
+}

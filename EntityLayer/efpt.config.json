@@ -1,0 +1,49 @@
+﻿{
+   "CodeGenerationMode": 0,
+   "ContextClassName": "LawyersitedbContext",
+   "ContextNamespace": "EntityLibrary",
+   "DefaultDacpacSchema": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": false,
+   "ModelNamespace": "EntityLibrary",
+   "OutputContextPath": "EntityLibrary",
+   "OutputPath": "EntityLibrary",
+   "ProjectRootNamespace": "EntityLayer",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 0,
+   "SelectedToBeGenerated": 0,
+   "Tables": [
+      {
+         "Name": "[dbo].[BlogContents]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Blogs]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Bulletins]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[SystemUsers]",
+         "ObjectType": 0
+      }
+   ],
+   "UiHint": "DESKTOP-V678B52\\SQLEXPRESS.LawyerSiteDB",
+   "UseBoolPropertiesWithoutDefaultSql": false,
+   "UseDatabaseNames": false,
+   "UseDbContextSplitting": false,
+   "UseFluentApiOnly": true,
+   "UseHandleBars": false,
+   "UseInflector": false,
+   "UseLegacyPluralizer": false,
+   "UseNoConstructor": false,
+   "UseNoDefaultConstructor": false,
+   "UseNoNavigations": false,
+   "UseNoObjectFilter": false,
+   "UseNodaTime": false,
+   "UseNullableReferences": false,
+   "UseSchemaFolders": false,
+   "UseSpatial": false
+}

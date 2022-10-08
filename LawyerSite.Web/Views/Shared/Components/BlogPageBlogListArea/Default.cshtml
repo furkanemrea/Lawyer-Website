@@ -1,0 +1,25 @@
+﻿@model BlogPageBlogContentsViewComponentModel
+@{
+    Layout = null;
+    var blogContent = Model.BlogContents[0];
+}
+if(Model != null && Model.BlogContents != null && Model.BlogContents.Count > 0){
+                      <div class="blog-item">
+                            @*    <div class="blog-image">
+                            <img src="images/blog/inner/1.jpg" alt="Blog Image">
+                            </div>*@
+                            <div class="text-bottom">
+                                <h3 class="title2"><a href="#">Best Education Law and Training</a></h3>
+                                <ul class="blog-meta">
+                                    <li>@blogContent.CreatedOn</li>
+                                    <li>@blogContent.CreatedBy.Name</li>
+                                </ul>
+                                <div class="blog-desc">@blogContent.Description</div>
+                                <div class="blog-btn mt-17"><a href="#" class="readon2">Read More</a></div>
+                            </div>
+                        </div>
+} else {
+    <div>
+        Bilinmeyen Bir Hata Oluştu
+    </div>
+}

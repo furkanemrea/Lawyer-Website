@@ -1,0 +1,116 @@
+﻿@model BlogPageViewModel
+@{
+    ViewData["Title"] = "Blogs";
+}
+<div class="rs-blog inner modify gray-bg pt-120 pb-90 md-pt-80 md-pb-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 pr-35 md-mb-30 md-pr-15">
+                <div class="blog-sidebar white-bg">
+                    @*  <div class="sb-search-box mb-35">
+                    <h4 class="sb-title mb-31">Search</h4>
+                    <form>
+                    <input type="text" name="search" placeholder="Search..." required>
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                    </div>*@
+                    <div class="sb-categories-box mb-35">
+                        <h4 class="sb-title mb-31">Blog Başlıkları</h4>
+                        <ul>
+                            @foreach (var blog in Model.Blogs)
+                            {
+                                <li><a href="/Blog/Detail?id=@blog.Id">@Html.Raw(blog.Title)</a></li>
+                            }
+                        </ul>
+                        @*@await Component.InvokeAsync("BlogPageBlogListArea")*@
+                    </div>@*
+                    <div class="sb-recent-post mb-35">
+                    <h4 class="sb-title mb-31">Recent Posts</h4>
+                    <div class="post-item">
+                    <div class="image-part">
+                    <img src="images/blog/1.jpg" alt="">
+                    </div>
+                    <div class="content-part">
+                    <a class="title" href="#">Best Education Law and Training</a>
+                    <span class="date">June 15, 2019</span>
+                    </div>
+                    </div>
+                    <div class="post-item">
+                    <div class="image-part">
+                    <img src="images/blog/2.jpg" alt="">
+                    </div>
+                    <div class="content-part">
+                    <a class="title" href="#">Flexible working Hours</a>
+                    <span class="date">June 15, 2019</span>
+                    </div>
+                    </div>
+                    <div class="post-item">
+                    <div class="image-part">
+                    <img src="images/blog/3.jpg" alt="">
+                    </div>
+                    <div class="content-part">
+                    <a class="title" href="#">The Top Law Students</a>
+                    <span class="date">June 15, 2019</span>
+                    </div>
+                    </div>
+                    </div>
+                    *@
+                    <div class="sb-tags">
+                        <h4 class="sb-title mb-21">Etiketler</h4>
+                        <div class="tagcloud">
+                            <a href="#">Davalar</a>
+                            <a href="#">Şüpheli İşlemler</a>
+                            <a href="#">Aile</a>
+                            <a href="#">Aile Konutu</a>
+                            <a href="#">Avukat</a>
+                            <a href="#">Trafik</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="row">
+                    @foreach (var blog in Model.Blogs.Where(x => x.RowStatusId==1).ToList())
+                    {
+                        string description = blog.BlogContents.Where(x => x.RowStatusId==1).FirstOrDefault()?.Description;
+
+                        <div class="col-md-6 mb-30">
+
+                            <div class="blog-item">
+                                @*    <div class="blog-image">
+                            <img src="images/blog/inner/1.jpg" alt="Blog Image">
+                            </div>*@
+                                <div class="text-bottom">
+                                    <h3 class="title2"><a href="#">@blog.Title</a></h3>
+                                    <ul class="blog-meta">
+                                        <li>@blog.CreatedOn.Value.ToShortDateString()</li>
+                                        <li>@blog.CreatedBy.Name</li>
+                                        @*    <li><a href="#">Traffic Tikets</a></li>*@
+                                    </ul>
+                                    @if (description?.Length > 99)
+                                    {
+                                        <div class="blog-desc">@Html.Raw(description.Substring(0, 50)) ...</div>
+                                    }
+                                    else
+                                    {
+                                        <div class="blog-desc">@Html.Raw(description) ...</div>
+                                    }
+                                    <div class="blog-btn mt-17"><a href="/Blog/Detail?id=@blog.Id" class="readon2">İncele</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script>
+        $(document).ready(() => {
+            $(".toolbar-area").remove();
+            $(".blog-page").closest("li").siblings().removeClass("current-menu-item");
+            $(".blog-page").closest("li").addClass("current-menu-item");
+        })
+    </script>
+}
