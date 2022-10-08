@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -28,7 +29,9 @@ namespace LawyerSite.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<LawyersitedbContext>(i => i.UseSqlServer(@"Data Source=.;Initial Catalog=LawyerSiteDB;Integrated Security=True"));
+            services.AddDbContext<LawyersitedbContext>(i => i.UseNpgsql(@"Host=89.252.184.189;Port=5432;Database=LawyersiteDB;User Id=bittibitti;Password=159357;"));
+
+
             services.AddScoped<ISystemUserBusiness, SystemUserBusiness>();
             services.AddScoped<IBlogBusiness, BlogBusiness>();
             services.AddScoped<IBlogContentBusiness, BlogContentBusiness>();
@@ -40,6 +43,13 @@ namespace LawyerSite.Web
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+
+            //using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+            //{
+            //    var context = serviceScope.ServiceProvider.GetRequiredService<LawyersitedbContext>();
+            //    context.Database.Migrate();
+            //}
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
