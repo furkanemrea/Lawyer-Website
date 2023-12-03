@@ -20,7 +20,6 @@ namespace EntityLayer.EntityLibrary
         public long? CreatedById { get; set; }
         public DateTime? CreatedOn { get; set; }
         public byte? RowStatusId { get; set; }
-        public String test {get;set;}
 
         public virtual SystemUsers CreatedBy { get; set; }
         public virtual ICollection<BlogContents> BlogContents { get; set; }
