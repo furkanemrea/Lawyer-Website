@@ -21,8 +21,8 @@ jobs:
 
     - name: Build the Docker image
       run: |
-        docker build -t furkanemrea/cdu-partner-web:${{ github.sha }} .
+        docker build -t furkanemrea/cdu-partner-web:latest .
 
     - name: Push Docker image to Docker Hub
       run: |
-        docker push furkanemrea/cdu-partner-web:${{ github.sha }}
+        docker push furkanemrea/cdu-partner-web:latest
