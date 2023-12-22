@@ -11,6 +11,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommonLibrary", "CommonLibr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LawyerSite.Web", "LawyerSite.Web\LawyerSite.Web.csproj", "{AC8020B2-AA03-44DD-9C66-0DA1A6301635}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{EB0C34D5-0A2A-455E-98C1-F660CEBDD3B0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{B9FFB8D8-81AC-443E-8064-B02BB19EF83C}"
+	ProjectSection(SolutionItems) = preProject
+		docker-publish.yaml = docker-publish.yaml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +43,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B9FFB8D8-81AC-443E-8064-B02BB19EF83C} = {EB0C34D5-0A2A-455E-98C1-F660CEBDD3B0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6C0B8452-F023-4B94-B8A2-6DC2693AE8F2}

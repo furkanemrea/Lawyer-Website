@@ -1,0 +1,20 @@
+
+{
+    "region" : "us-east-1",
+    "configuration" : "Release",
+    "framework"     : "net5.0",
+    "self-contained" : false,
+    "application"    : "LawyerSiteWeb",
+    "environment"    : "web-cdu-partners",
+    "enable-xray"    : false,
+    "enhanced-health-type" : "basic",
+    "additional-options"   : "\"aws:autoscaling:launchconfiguration,SecurityGroups\"=\"sg-0a39c186441eb4a74\";\"aws:ec2:vpc,Subnets\"=\"subnet-01b929b25c2f02110\"",
+    "solution-stack"       : "64bit Amazon Linux 2 v2.6.3 running .NET Core",
+    "environment-type"     : "SingleInstance",
+    "cname"                : "web-cdu-partners",
+    "instance-type"        : "t2.micro",
+    "key-pair"             : "cdu-partner-pem",
+    "instance-profile"     : "aws-elasticbeanstalk-ec2-role",
+    "service-role"         : "aws-elasticbeanstalk-service-role",
+    "proxy-server"         : "none"
+}

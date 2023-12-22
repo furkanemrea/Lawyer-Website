@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Anasayfa";
 }
 <div class="rs-contact inner gray-bg pt-120 md-pt-80">
     <div class="container">
@@ -17,8 +17,10 @@
                             </div>
                             <div class="address-text">
                                 <h5 class="contact-title">Telefon Numaraları</h5>
-                                <a href="tel:+90 850 430 4482">+90 850 430 4482</a><br/>
-                                <a href="tel:+90 850 430 4482">+90 850 430 4482</a>
+                                <a href="whatsapp://send?phone=+905078116504"><i class="fa fa-phone"></i> +90 507 811 65 04</a><br />
+
+                                <a href="whatsapp://send?phone=+908504304482"><i class="fa fa-phone"></i> +90 850 430 4480</a><br />
+                                <a href="whatsapp://send?phone=+908504304482"><i class="fa fa-phone"></i> +90 850 430 4482</a><br />
                             </div>
                         </div>
                         <div class="address-item ml--5 mb-20">
@@ -46,47 +48,49 @@
                 <div class="contact-wrap">
                     <div class="sec-title mb-50">
                         <h2 class="title mb-33">Bizimle İletişime Geç</h2>
-                        <div class="desc">We denounce with righteous indignation and dislike men who are so beguiled perfectly simple. <br> and demoralized by the charms of pleasure of the moment, so blinded by desire.</div>
+                        <div class="desc">Aşağıdaki formu doldurarak bize <strong> 7/24 </strong> ulaşabilirsiniz </div>
                     </div>
                     <div id="form-messages"></div>
-                    <form id="contact-form" class="contact-inner-page" method="post" action="mailer.php">
+                    <div id="contact-form" class="contact-inner-page">
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-field">
-                                    <input type="text" placeholder="Your Name" id="name" name="name" required>
+                                    <input type="text" placeholder="İsim" id="firstname" name="name" required>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-field">
-                                    <input type="email" placeholder="Your Email" id="email" name="email" required>
+                                    <input type="text" placeholder="Soyisim" id="surname" name="name" required>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-field">
-                                    <input type="text" placeholder="Phone" id="phone_number" name="phone_number" required>
+                                    <input type="email" placeholder="Mail adresiniz" id="email-address" name="email">
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-field">
-                                    <input type="text" name="website" placeholder="Your Website">
+                                    <input type="text" placeholder="Telefon Numaranız" id="phone-number" name="phone_number" required>
                                 </div>
                             </div>
+
                             <div class="col-md-12">
                                 <div class="form-field">
-                                    <textarea placeholder="Your Message" id="message" name="message" required></textarea>
+                                    <textarea placeholder="Mesajınız." id="email-message" name="message" required></textarea>
                                 </div>
                             </div>
                         </div>
                         <div class="form-btn submit-btn mt-30">
-                            <button class="readon upper" type="submit">Submit request</button>
+                            <button class="readon upper" onclick="sendEmail()">Gönder</button>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="g-map mt-120 md-mt-80">
-        <iframe src="https://maps.google.com/maps?q=37.803467%2C%20-122.472369&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3008.342068023519!2d28.998410099999997!3d41.0615149!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab78911307d8d%3A0x6ca1da370fa91f4c!2sCDU%7C%20PARTNERS%20HUKUK%20B%C3%9CROSU!5e0!3m2!1sen!2str!4v1697977854965!5m2!1sen!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        @*      <iframe src="https://maps.google.com/maps?q=37.803467%2C%20-122.472369&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>*@
     </div>
 </div>
 
@@ -94,7 +98,34 @@
     <script>
         $(document).ready(() => {
             $(".toolbar-area").remove();
+            $(".contact-page").closest("li").siblings().removeClass("current-menu-item");
+            $(".contact-page").closest("li").addClass("current-menu-item");
+
+            $(".toolbar-area").remove();
             $(".contact-page").addClass("current-menu-item");
+            $("title").html("CDU+ Partners Iletisim");
         })
+
+
+        function sendEmail() {
+            $.ajax({
+                url: "/contact/SendEmail",
+                data: {
+                    phoneNumber: $("#phone-number").val(),
+                    name: $("#firstname").val(),
+                    surname: $("#surname").val(),
+                    email: $("#email-address").val(),
+                    body: $("#email-message").val()
+                },
+                type: "POST",
+                success: function (response) {
+                    alert(1);
+                },
+                error: function (xhr, status, error) {
+                    console.error("Hata oluştu:", error);
+                }
+            });
+        }
+
     </script>
 }

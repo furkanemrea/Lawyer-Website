@@ -29,7 +29,10 @@ namespace LawyerSite.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<LawyersitedbContext>(i => i.UseNpgsql(@"Host=89.252.184.189;Port=5432;Database=LawyersiteDB;User Id=bittibitti;Password=159357;"));
+            services.AddDbContext<LawyersitedbContext>(i => i.UseSqlServer(@"Server=18.210.19.248,1433;Database=LawyersiteDB;Integrated Security=false;User Id=SA;Password=yourStrong@Password;MultipleActiveResultSets=true"));
+
+
+
 
 
             services.AddScoped<ISystemUserBusiness, SystemUserBusiness>();
@@ -50,16 +53,8 @@ namespace LawyerSite.Web
             //    context.Database.Migrate();
             //}
 
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
-            }
+            app.UseDeveloperExceptionPage();
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
