@@ -19,14 +19,10 @@ jobs:
         username: ${{ secrets.DOCKER_PERSONAL_USERNAME }}
         password: ${{ secrets.DOCKER_PERSONAL_PASSWORD }}
 
-    - name: Get commit count
-      id: commit_count
-      run: echo "::set-output name=commit_count::$(git rev-list --count HEAD)"
-
     - name: Build the Docker image
       run: |
-        docker build -t furkanemrea/cdu-partner-web:v${{ steps.commit_count.outputs.commit_count }} .
+        docker build -t furkanemrea/cdu-partner-web:${{ github.sha }} .
 
     - name: Push Docker image to Docker Hub
       run: |
-        docker push furkanemrea/cdu-partner-web:v${{ steps.commit_count.outputs.commit_count }}
+        docker push furkanemrea/cdu-partner-web:${{ github.sha }}
