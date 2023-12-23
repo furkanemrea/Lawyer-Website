@@ -781,7 +781,7 @@ ul.listing-style.modify li {
     03. Header Section CSS
 --------------------------*/
 .full-width-header .toolbar-area {
-    background: rgba(31, 40, 57, 0.47);
+    background: #1f2839 !important;
 }
 
     .full-width-header .toolbar-area .toolbar-contact {
