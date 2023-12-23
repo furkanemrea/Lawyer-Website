@@ -48,7 +48,11 @@
     <![endif]-->
 </head>
 <body class="defult-home">
-
+    @{
+        string youtubeUrl = "http://www.youtube.com/@cdupartnerslaw";
+        string facebookUrl = "https://www.facebook.com/CDUPartnersHukuk";
+        string twitterUrl = "https://twitter.com/cdupartnerslaw";
+    }
     <!-- Preloader area start here   -->
     <div id="loading" class="image-preloader">
         <div class="loader"><img src="~/images/company/color_transparent.png" alt=""></div>
@@ -63,7 +67,7 @@
                     <div class="col-lg-6 col-md-7 col-sm-12">
                         <div class="toolbar-contact">
                             <ul>
-                                <li><i class="fa fa-envelope-o"></i><a href="mailto:cduhukuk@gmail.com">cduhukuk@gmail.com</a></li>
+
 
                                 <li><i class="fa fa-phone"></i><a href="whatsapp://send?phone=+905078116504">+90 507 811 65 04</a></li>
                                 <li>
@@ -74,6 +78,7 @@
                                     <i class="fa fa-phone"></i><a href="whatsapp://send?phone=+905551740072">+90 555 174 00 72</a>
 
                                 </li>
+                                <li><i class="fa fa-envelope-o"></i><a href="mailto:cduhukuk@gmail.com">cduhukuk@gmail.com</a></li>
                                 <li><i class="fa fa-clock-o"></i> 08:30 - 18:00</li>
                             </ul>
                         </div>
@@ -81,11 +86,11 @@
                     <div class="col-lg-6 col-md-5 col-sm-12">
                         <div class="toolbar-sl-share">
                             <ul>
-                                <li><a target="_blank" href="https://www.facebook.com/CDUPartnersHukuk"><i class="fa fa-facebook"></i></a></li>
-                                <li><a target="_blank" href="https://instagram.com/cdu.partners?igshid=MzRlODBiNWFlZA=="><i class="fa fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a target="_blank" href="@facebookUrl"><i class="fa fa-facebook"></i></a></li>
+                                <li><a target="_blank" href="https://instagram.com/cdupartnerslaw"><i class="fa fa-instagram"></i></a></li>
+                                <li><a href="@twitterUrl"><i class="fa fa-twitter"></i></a></li>
                                 <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                @*<li class="get-btn"><a href="#">Free Consultation</a></li>*@
+                                <li><a href="@youtubeUrl"><i class="fa fa-youtube"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -110,44 +115,18 @@
                                 <div class="main-menu">
                                     <div class="mobile-menu">
                                         <a class="rs-menu-toggle">
-                                            <i class="fa fa-bars"></i>
+                                            <i class="fa fa-bars" style="color:black"></i>
                                         </a>
                                     </div>
                                     <nav class="rs-menu">
                                         <ul class="nav-menu">
                                             <li class="current-menu-item">
                                                 <a href="/" class="main-page">Anasayfa</a>
-                                                @*     <ul class="mega-menu">
-                                                <li class="mega-menu-container">
-                                                <div class="mega-menu-innner">
-                                                <div class="single-megamenu">
-                                                <ul class="sub-menu">
-                                                <li class="menu-title">Home Multipage</li>
-                                                <li class="active"><a href="index.html">Home One</a> </li>
-                                                <li><a href="index2.html">Home Two</a> </li>
-                                                <li><a href="index3.html">Home Three</a> </li>
-                                                <li><a href="index4.html">Home Four</a> </li>
-                                                <li class="last-item"><a href="index5.html">Home Five</a> </li>
-                                                </ul>
-                                                </div>
-                                                <div class="single-megamenu">
-                                                <ul class="sub-menu last-sub-menu">
-                                                <li class="menu-title">Home Onepage</li>
-                                                <li><a href="onepage1.html">Home1 Onepage</a> </li>
-                                                <li><a href="onepage2.html">Home2 Onepage</a> </li>
-                                                <li><a href="onepage3.html">Home3 Onepage</a> </li>
-                                                <li><a href="onepage4.html">Home4 Onepage</a> </li>
-                                                <li class="last-item"><a href="onepage5.html">Home5 Onepage</a> </li>
-                                                </ul>
-                                                </div>
-                                                </div>
-                                                </li>
-                                                </ul> <!-- //.mega-menu -->*@
                                             </li>
-
                                             <li><a href="/About/Index" class="about-us-page">Hakkımızda</a></li>
+                                            <li><a href="/About/Index" class="our-team">Ekibimiz(CS)</a></li>
                                             <li><a href="/Blog/Blogs" class="blog-page">Bloglar</a></li>
-
+                                            <li><a href="/About/Index" class="we-are-on-the-press">Basında Biz</a></li>
                                             <li><a href="/Contact/Index" class="contact-page">İletişim</a></li>
                                         </ul> <!-- //.nav-menu -->
                                     </nav>
@@ -178,9 +157,9 @@
                     </ul>
                     <ul class="social">
                         <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
+                        <li><a href="@twitterUrl"><i class="fa fa-twitter"></i></a></li>
                         <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="@youtubeUrl"><i class="fa fa-youtube"></i></a></li>
                     </ul>
                 </div>
             </nav>
@@ -206,14 +185,15 @@
                                 <img src="images/white-logo.png" alt="Footer Logo">
                             </a>
                             <div class="footer-info">
-                                <p class="footer-desc">Hukuki konularda size destek sunan profesyonel bir ekibin parçasıyız ve müşterilerimizin haklarını savunmak, sorunlarını çözmek ve ihtiyaçlarına hızlı bir şekilde yanıt vermek için buradayız. </p>
+                                <p class="footer-desc">Hukuki konularda size destek sunan profesyonel bir ekibin parçasıyız ve müvekkillerimizin haklarını savunmak, sorunlarını çözmek ve ihtiyaçlarına hızlı bir şekilde yanıt vermek için buradayız. </p>
                                 <p class="footer-desc">Siz değerli müvekkillerimizin hukuki sorunlarını çözmek için tutkulu ve kararlıyız.</p>
                             </div>
                             <ul class="social-links">
-                                <li><a target="_blank" href="https://www.facebook.com/CDUPartnersHukuk"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a target="_blank" href="https://instagram.com/cdu.partners?igshid=MzRlODBiNWFlZA=="><i class="fa fa-instagram"></i></a></li>
+                                <li><a target="_blank" href="@facebookUrl"><i class="fa fa-facebook"></i></a></li>
+                                <li><a target="_blank" href="https://instagram.com/cdupartnerslaw"><i class="fa fa-instagram"></i></a></li>
+                                <li><a href="@twitterUrl"><i class="fa fa-twitter"></i></a></li>
                                 <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a target="_blank" href="@youtubeUrl"><i class="fa fa-youtube"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -221,15 +201,17 @@
                         <h5 class="footer-title">Bize Ulaşın</h5>
                         <div class="desc mb-24">Mevcut hukuki uyuşmazlığınız ile alakalı bize başvurunuz.</div>
                         <ul class="footer-address">
-                            <li><i class="fa fa-globe"></i><span>Fulya Mahallesi, Ortaklar Caddesi No:45 Daire 3</span></li>
-                            <li><i class="fa fa-phone"></i><a href="whatsapp://send?phone=+905078116504">+90 507 811 65 04</a></li>
-                            <li><i class="fa fa-phone"></i><a href="whatsapp://send?phone=+905078274768">+90 507 827 47 68</a></li>
-                            <li><i class="fa fa-phone"></i><a href="whatsapp://send?phone=+905551740072">+90 555 174 00 72</a></li>
-                            <li><i class="fa fa-envelope-o"></i><a href="mailto:cduhukuk@gmail.com">cduhukuk@gmail.com</a></li>
                             <li>
                                 <i class="fa fa-clock-o"></i>Pazartesi
                                 – Cuma: 08:30 - 18:00
                             </li>
+
+                            <li><i class="fa fa-phone"></i><a href="whatsapp://send?phone=+905078116504">+90 507 811 65 04</a></li>
+                            <li><i class="fa fa-phone"></i><a href="whatsapp://send?phone=+905078274768">+90 507 827 47 68</a></li>
+                            <li><i class="fa fa-phone"></i><a href="whatsapp://send?phone=+905551740072">+90 555 174 00 72</a></li>
+                            <li><i class="fa fa-envelope-o"></i><a href="mailto:cduhukuk@gmail.com">cduhukuk@gmail.com</a></li>
+                            <li><i class="fa fa-globe"></i><a target="_blank" href="https://maps.app.goo.gl/e4wodWq6JDKx9ThMA">Fulya Mahallesi, Ortaklar Caddesi No:45 Daire 3 Şişli/İstanbul</a></li>
+
                         </ul>
                     </div>
                     <div class="col-lg-3 col-md-12 col-sm-12 footer-widget-three md-mb-50">
@@ -237,29 +219,27 @@
                         <div class="footer-news">
                             <div class="news-item">
                                 <div class="image-part">
-                                    <img src="images/blog/footer-blog/1.jpg" alt="">
+                                    <img src="images/youtube/children.jpg" alt="">
+
                                 </div>
                                 <div class="content-part">
-                                    <a class="title" href="#">Best Education Law and Training</a>
-                                    <span class="date">June 15, 2019</span>
+                                    <a class="title" target="_blank" href="https://www.youtube.com/watch?v=E3Dc8Mq0RFk">Suça sürüklenen çocuklar topluma nasıl kazandırılır?</a>
                                 </div>
                             </div>
                             <div class="news-item">
                                 <div class="image-part">
-                                    <img src="images/blog/footer-blog/2.jpg" alt="">
+                                    <img src="images/youtube/tenant.jpg" alt="">
                                 </div>
                                 <div class="content-part">
-                                    <a class="title" href="#">Flexible working Hours</a>
-                                    <span class="date">June 15, 2019</span>
+                                    <a class="title" target="_blank" href="https://www.youtube.com/watch?v=KUKat9jlqAc">Kiracıların tahliye taahhütnamesindeki imzaya itiraz hakları</a>
                                 </div>
                             </div>
                             <div class="news-item">
                                 <div class="image-part">
-                                    <img src="images/blog/footer-blog/3.jpg" alt="">
+                                    <img src="images/youtube/filled-in-lastly.jpg" alt="">
                                 </div>
                                 <div class="content-part">
-                                    <a class="title" href="#">The Top Law Students</a>
-                                    <span class="date">June 15, 2019</span>
+                                    <a class="title" target="_blank" href="https://www.youtube.com/watch?v=f6hZt7s1mpY">Sonradan doldurulan tahliye taahhütnamesi geçerli midir?    </a>
                                 </div>
                             </div>
                         </div>
@@ -278,11 +258,87 @@
         <div class="footer-bottom">
             <div class="container">
                 <div class="copyright text-center">
-                    <p>&copy; 2019 CDU+ PARTNERS LAW FIRM</p>
+                    <p>&copy; 2019 CDU+PartnerS LAW FIRM</p>
                 </div>
             </div>
         </div>
     </footer>
+    <style>
+        .fixed-template-for-contact {
+            position: fixed;
+            min-width: 474px !important;
+            opacity: 0.8;
+            bottom: 0;
+            left: 35%;
+            font-size: 28px;
+            background-color: gray;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999999999;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .template-for-contact-item {
+            margin-left: 55px;
+        }
+
+        .template-for-contact-last-item,
+        .template-for-contact-item {
+            color: #1f2839 !important;
+        }
+
+        .template-for-contact-last-item {
+            margin-left: 55px;
+        }
+
+        .template-for-contact-item:after {
+                top: 0;
+                margin-left: 19px;
+                content: '';
+                background-color: black;
+                height: 100%;
+                width: 2px;
+                position: absolute;
+        }
+
+        .first-item {
+            margin-left: 12px !important;
+        }
+        @@media screen and (max-width: 440px) {
+            .fixed-template-for-contact {
+                position: fixed;
+                min-width: 432px !important;
+                opacity: 0.8;
+                bottom: 0;
+                left: 0%;
+                font-size: 27px;
+                background-color: gray;
+                height: 100px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 999999999;
+            }
+
+            .template-for-contact-item {
+                margin-left: 38px;
+            }
+            .first-item{
+                margin-left: 19px !important;
+            }    
+        }
+    </style>
+    <div class="fixed-template-for-contact">
+        <div class="d-flex" style="color:black">
+            <a href="tel:+905078116504" class="template-for-contact-item first-item"><i class="fa fa-phone"></i> Ara</a>
+            <a href="whatsapp://send?phone=+905078116504" class="template-for-contact-item"><i class="fa fa-envelope mr-1"></i>Mesaj</a>
+            <a href="mailto:cduhukuk@gmail.com" class="template-for-contact-last-item"><i class="fa fa-solid fa-at"></i> Mail</a>
+        </div>
+    </div>
+
     <!-- Footer End -->
     <!-- start scrollUp  -->
     <div id="scrollUp">

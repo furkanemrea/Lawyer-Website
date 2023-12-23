@@ -2,6 +2,13 @@
 @{
     ViewData["Title"] = "Detail";
 }
+
+
+<style>
+    .content-wrap p{
+        text-align:justify;
+    }
+</style>
 <div class="rs-blog single gray-bg pt-120 pb-120 md-pt-80 md-pb-80">
     <div class="container">
         <div class="row">
@@ -13,7 +20,9 @@
                         @foreach (var content in Model.BlogContents)
                         {
                             <h3 class="fs-30">@content.Title</h3>
-                            @Html.Raw(content.Description)
+                            <p style="text-align:justify">
+                                @Html.Raw(content.Description)
+                            </p>
                         }
 
                         @*<h2 class="mb-22">Some great pleasure ducimus</h2>

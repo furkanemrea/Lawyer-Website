@@ -1,0 +1,54 @@
+﻿@{
+    ViewData["Title"] = "Basında Biz";
+}
+
+<style>
+    .shadow-for-card {
+        box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+        -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+    }
+</style>
+<div id="rs-about" class="rs-about style1 pt-120 pb-120 md-pt-80 md-pb-78">
+    <div class="container">
+        <div style="display:flex;justify-content:center">
+            <h2>Basında Biz</h2>
+        </div>
+        <div class="row rs-vertical-middle">
+            <div class="col-lg-6 pl-45 md-pl-15">
+                <div class="card shadow-for-card">
+                    <div class="card-body">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/KUKat9jlqAc?si=rSTemKCtcW-8q0XP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 pl-45 md-pl-15">
+                <div class="card shadow-for-card">
+                    <div class="card-body">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/E3Dc8Mq0RFk?si=7xFs-DG0gWsX78Kw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mt-5 pl-45 md-pl-15">
+                <div class="card shadow-for-card">
+                    <div class="card-body">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/f6hZt7s1mpY?si=5RrdVWWdi5DHIWKO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
+@section Scripts{
+    <script>
+        $(document).ready(() => {
+            $("title").html("CDU+Partners Basında Biz");
+
+            $(".toolbar-area").remove();
+            $(".about-us-page").closest("li").siblings().removeClass("current-menu-item");
+            $(".about-us-page").closest("li").addClass("current-menu-item");
+        })
+    </script>
+}

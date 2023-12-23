@@ -9,6 +9,12 @@ namespace LawyerSite.Web.Controllers
         {
             return await Task.FromResult(View());
         }
+
+
+        public async Task<IActionResult> OnPress()
+        {
+            return await Task.FromResult(View());
+        }
     }
 }
  
