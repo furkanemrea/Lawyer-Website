@@ -269,7 +269,7 @@
             min-width: 474px !important;
             opacity: 0.8;
             bottom: 0;
-            left: 35%;
+            left: 37%;
             font-size: 28px;
             background-color: gray;
             height: 60px;
@@ -295,18 +295,19 @@
         }
 
         .template-for-contact-item:after {
-                top: 0;
-                margin-left: 19px;
-                content: '';
-                background-color: black;
-                height: 100%;
-                width: 2px;
-                position: absolute;
+            top: 0;
+            margin-left: 19px;
+            content: '';
+            background-color: black;
+            height: 100%;
+            width: 2px;
+            position: absolute;
         }
 
         .first-item {
             margin-left: 12px !important;
         }
+
         @@media screen and (max-width: 440px) {
             .fixed-template-for-contact {
                 position: fixed;
@@ -326,9 +327,16 @@
             .template-for-contact-item {
                 margin-left: 38px;
             }
-            .first-item{
+
+            .first-item {
                 margin-left: 19px !important;
-            }    
+            }
+        }
+
+        @@media screen and (max-width: 391px) {
+            .first-item {
+                margin-left: -25px !important;
+            }
         }
     </style>
     <div class="fixed-template-for-contact">
