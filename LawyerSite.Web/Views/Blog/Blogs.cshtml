@@ -33,7 +33,7 @@
                                         <li>@blog.CreatedBy.Name</li>
                                         @*    <li><a href="#">Traffic Tikets</a></li>*@
                                     </ul>
-                                    @if (description?.Length > 99)
+                                    @if (description?.Length > 250)
                                     {
                                         <div class="blog-desc">@Html.Raw(description.Substring(0, 250)) ...</div>
                                     }
