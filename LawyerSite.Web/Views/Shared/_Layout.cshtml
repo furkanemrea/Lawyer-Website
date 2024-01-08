@@ -100,14 +100,26 @@
         </div>
         <!-- Toolbar End -->
         <!--Header Start-->
+        <style>
+            .logo-area-2 img{
+                max-width: 50%;
+                margin-top: 15px;
+                margin-left: 15px;
+            }
+            @@media (max-width: 1000px) {
+                .logo-area-2 img {
+                    display: none;
+                }
+            }
+        </style>
         <header id="rs-header" class="rs-header">
             <!-- Menu Start -->
             <div class="menu-area menu-sticky">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-3">
-                            <div class="logo-area">
-                                <a class="light" href="/"><img src="~/images/company/color_transparent.png" alt="logo"></a>
+                            <div class="logo-area-2">
+                                <a class="light" href="/"><img src="~/images/color_transparent2.png" alt="logo"></a>
                                 <a class="dark" href="/">@*<img src="~/images/logo.png" alt="logo">*@</a>
                             </div>
                         </div>
@@ -125,14 +137,13 @@
                                                 <a href="/" class="main-page">Anasayfa</a>
                                             </li>
                                             <li><a href="/About/Index" class="about-us-page">Hakkımızda</a></li>
-                                            <li><a href="/About/Index" class="our-team">Ekibimiz(CS)</a></li>
+@*                                            <li><a href="/About/Index" class="our-team">Ekibimiz(CS)</a></li>*@
                                             <li><a href="/Blog/Blogs" class="blog-page">Bloglar</a></li>
                                             <li><a href="/About/OnPress" class="we-are-on-the-press">Basında Biz</a></li>
                                             <li><a href="/Contact/Index" class="contact-page">Avukata Sor</a></li>
                                         </ul> <!-- //.nav-menu -->
                                     </nav>
                                 </div> <!-- //.main-menu -->
-
                             </div>
                         </div>
                     </div>
