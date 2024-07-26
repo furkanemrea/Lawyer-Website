@@ -29,7 +29,7 @@ namespace LawyerSite.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<LawyersitedbContext>(i => i.UseSqlServer(@"Server=18.210.19.248,1433;Database=LawyersiteDB;Integrated Security=false;User Id=SA;Password=yourStrong@Password;MultipleActiveResultSets=true"));
+            services.AddDbContext<LawyersitedbContext>(i => i.UseSqlServer(@"Server=3.77.57.41,1433;Database=LawyersiteDB;Integrated Security=false;User Id=SA;Password=yourStrong@Password;MultipleActiveResultSets=true"));
 
 
 
